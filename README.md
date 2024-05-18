@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# 문제
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> Todo App을 구현하기 위해 `<App />`, `<Form />`, `<Item />`를 구현하세요. 모든 테스트를 통과해야 합니다.
 
-## Available Scripts
+# 조건
 
-In the project directory, you can run:
+## `<App />`
 
-### `npm start`
+- Todo App을 구현합니다.
+- 할 일이 없으면 "할 일 없음"이 화면에 보여집니다.
+- `<Form />`에서 입력한 할 일을 `<Item />`로 보여줍니다.
+- 최근에 추가한 할 일이 위에 보여집니다.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## `<Form />`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- 할 일을 입력할 수 있는 input과 추가 버튼이 있습니다.
+- input에 할 일을 입력하고 추가 버튼을 누르면 `onAdd` 함수가 호출됩니다.
+  - `onAdd` 함수는 input에 `입력한 값`을 인자로 받습니다.
+- 추가 버튼을 누르면 input의 값이 초기화됩니다.
+- input에 입력한 값이 없다면 추가 버튼을 눌러도 `onAdd` 함수가 호출되지 않습니다.
 
-### `npm test`
+## `<Item />`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- 할 일을 보여줍니다.
+- 체크 버튼을 누르면 `onCompleteTodo` 함수가 호출됩니다.
+  - `onCompleteTodo` 함수는 할 일의 `id`와 `check 상태`를 인자로 받습니다.
+- 삭제 버튼을 누르면 `onDeleteTodo` 함수가 호출됩니다.
+  - `onDeleteTodo` 함수는 할 일의 `id`를 인자로 받습니다.
 
-### `npm run build`
+# 준비
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## package 설치
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+$ npm install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## ESLint & Prettier Extension 설치
 
-### `npm run eject`
+- VSCode를 사용하신다면 아래 확장 프로그램을 설치하세요.
+- ESLint Extension을 설치하세요.
+- Prettier Extension을 설치하세요.
+- `.eslintrc.js` 파일을 참고하여 설정을 변경하지 마세요.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 실행
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+$ npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 테스트
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+모든 테스트 케이스를 통과하면 됩니다.
 
-## Learn More
+```bash
+$ npm test
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# 주의 사항
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- PropTypes을 수정하지 마세요.
+  - 만약 PropTypes이 잘못되었다고 생각되면 디스코드에 말씀해주세요.
+- 테스트 케이스를 수정하면 안됩니다.
+  - 만약 테스트 케이스가 잘못되었다고 생각되면 디스코드에 말씀해주세요.
+- package.json에 있는 모듈은 삭제하면 안됩니다.
+  - 만약 다른 모듈을 추가하고 싶다면 디스코드에 말씀해주세요.
 
-### Code Splitting
+# 제출
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. 이름/닉네임으로 branch를 만들고 작업을 하세요.
+2. 작업이 끝나면 PR을 보내주세요.
+3. CI가 통과하면 완료입니다.

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Form from './components/Form';
 import Item from './components/Item';
 import './App.css';
@@ -6,13 +6,16 @@ import './App.css';
 function App() {
   const [todos, setTodos] = useState([]);
 
+  const nextId = useRef(1);
+
   const handleAddTodo = todo => {
     const newTodo = {
-      id: todos.length + 1,
+      id: nextId.current,
       todo,
       isCompleted: false,
     };
     setTodos([newTodo, ...todos]);
+    nextId.current += 1;
   };
 
   const handleCompleteTodo = (id, isCompleted) => {

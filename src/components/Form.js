@@ -15,20 +15,18 @@ function Form({ onAddTodo }) {
     }
   };
   return (
-    <div>
-      <form onSubmit={onAdd}>
-        <input
-          className="inputTodo"
-          type="text"
-          value={value}
-          onChange={onChange}
-          placeholder="할 일을 입력해주세요."
-        />
-        <button className="addButton" type="submit">
-          추가
-        </button>
-      </form>
-    </div>
+    <form onSubmit={onAdd}>
+      <input
+        className="inputTodo"
+        type="text"
+        value={value}
+        onChange={onChange}
+        placeholder="할 일을 입력해주세요."
+      />
+      <button className="addButton" type="submit">
+        추가
+      </button>
+    </form>
   );
 }
 

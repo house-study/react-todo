@@ -21,7 +21,12 @@ function Form({ onAddTodo }) {
 
   return (
     <div>
-      <input type="text" value={inputValue} onChange={handleInputValueChange} />
+      <input
+        type="text"
+        value={inputValue}
+        onChange={handleInputValueChange}
+        placeholder="할 일을 입력해주세요."
+      />
       <button type="button" onClick={handleClickAddButton}>
         추가
       </button>

@@ -7,9 +7,8 @@ function App() {
   const [todoList, setTodoList] = useState([]);
 
   const addTodo = newTodo => {
-    const uuid = uuidv4();
     const newTodoForm = {
-      id: uuid,
+      id: uuidv4(),
       todo: newTodo,
       isCompleted: false,
     };
@@ -36,27 +35,28 @@ function App() {
     <div className="App">
       <h1>Todo List</h1>
       <Form onAddTodo={addTodo} />
-      <ul>
-        {todoList?.map(todo => {
-          return (
-            <Item
-              key={todo.id}
-              id={todo.id}
-              todo={todo.todo}
-              isCompleted={todo.isCompleted}
-              onDeleteTodo={deleteTodo}
-              onCompleteTodo={completeTodo}
-            />
-          );
-        })}
-      </ul>
+      {todoList.length === 0 ? (
+        <div>할 일이 없습니다. </div>
+      ) : (
+        <ul>
+          {todoList?.map(todo => {
+            return (
+              <Item
+                key={todo.id}
+                id={todo.id}
+                todo={todo.todo}
+                isCompleted={todo.isCompleted}
+                onDeleteTodo={deleteTodo}
+                onCompleteTodo={completeTodo}
+              />
+            );
+          })}
+        </ul>
+      )}
     </div>
   );
 }
 
 export default App;
 
-// TODO: Todo App을 구현합니다.
 // TODO: [] 할 일이 없으면 "할 일 없음"이 화면에 보여집니다.
-// TODO: [] <Form />에서 입력한 할 일을 <Item />로 보여줍니다.
-// TODO: [] 최근에 추가한 할 일이 위에 보여집니다.

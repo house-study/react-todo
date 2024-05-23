@@ -22,7 +22,7 @@ function Form({ onAddTodo }) {
   return (
     <div>
       <input type="text" value={inputValue} onChange={handleInputValueChange} />
-      <button type="button" onClick={() => handleClickAddButton}>
+      <button type="button" onClick={handleClickAddButton}>
         추가
       </button>
     </div>

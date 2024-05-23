@@ -30,3 +30,9 @@ Item.propTypes = {
 };
 
 export default Item;
+
+// TODO: 할 일을 보여줍니다.
+// TODO: 체크 버튼을 누르면 onCompleteTodo 함수가 호출됩니다.
+// TODO: onCompleteTodo 함수는 할 일의 id와 check 상태를 인자로 받습니다.
+// TODO: 삭제 버튼을 누르면 onDeleteTodo 함수가 호출됩니다.
+// TODO: onDeleteTodo 함수는 할 일의 id를 인자로 받습니다.

@@ -6,6 +6,7 @@ function Form({ onAddTodo }) {
 
   const OnAdd = newTodo => {
     onAddTodo(newTodo);
+    setInputValue('');
   };
 
   const handleInputValueChange = e => {
@@ -37,5 +38,3 @@ Form.propTypes = {
 };
 
 export default Form;
-
-// TODO: input에 입력한 값이 없다면 추가 버튼을 눌러도 onAdd 함수가 호출되지 않습니다

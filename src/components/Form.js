@@ -1,10 +1,28 @@
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 
 function Form({ onAddTodo }) {
+  const [todo, setTodo] = useState('');
+  const Addtodo = () => {
+    if (todo === '') return;
+    onAddTodo(todo);
+    setTodo('');
+  };
+  const UpdatedTodo = e => {
+    setTodo(e.target.value);
+  };
+
   return (
     <div>
-      <input type="text" />
-      <button type="button">추가</button>
+      <input
+        type="text"
+        value={todo}
+        onChange={UpdatedTodo}
+        placeholder="할 일을 입력해주세요."
+      />
+      <button type="button" onClick={Addtodo}>
+        추가
+      </button>
     </div>
   );
 }
